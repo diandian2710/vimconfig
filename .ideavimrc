@@ -1,0 +1,234 @@
+" ================================================================================================
+" = extensions =====================================
+" ================================================================================================
+plug 'tpope/vim-surround'
+plug 'preservim/nerdtree'
+plug 'easymotion/vim-easymotion'
+plug 'terryma/vim-multiple-cursors'
+plug 'tpope/vim-commentary'
+plug 'machakann/vim-highlightedyank'
+" ================================================================================================
+" = basic settings =====================================
+" ================================================================================================
+set showmode
+set hlsearch
+set incsearch
+set smartcase
+set ignorecase
+" show relative number and  current line number
+set relativenumber
+set number
+set clipboard+=unnamed
+set ideajoin
+" set quickscope
+set quickscope
+" ================================================================================================
+" = no leader keymaps =====================================
+"================================================================================================
+" window move
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+
+nnoremap <c-o> gi
+nmap gd <action>(gotodeclaration)
+nmap gi <action>(gotoimplementation)
+nmap gu <action>(gotosupermethod)
+nmap g] <action>(gotonexterror)
+nmap g[ <action>(gotopreviouserror)
+nmap gt <action>(gototest)
+nmap gm <action>(methodup)
+" last changed in current buffer(file)
+nmap ga '.
+" bookmark in whole program
+nmap ma ma
+nmap 'a 'a
+nmap ms ms
+nmap 's 's
+nmap md md
+nmap 'd 'd
+nmap mf mf
+nmap 'f 'f
+" go to start or end of the line
+nnoremap l $
+nnoremap h ^
+vnoremap l $
+vnoremap h ^
+nnoremap ; :
+inoremap jk <esc>`^
+" tab operation
+nnoremap <s-k> gt
+nnoremap <s-j> gt
+" yank func
+nnoremap yf va{v
+" undo
+nnoremap u <c-r>
+" tab in general mode will move to text buffer
+nnoremap <tab> :bnext<cr>
+" y to end
+nnoremap yk y$
+" y to begin
+nnoremap yj y^
+" multiple-cursors==================================================================
+nmap <c-n> <plug>nextwholeoccurrence
+xmap <c-n> <plug>nextwholeoccurrence
+nmap g<c-n> <plug>nextoccurrence
+xmap g<c-n> <plug>nextoccurrence
+nmap <c-x> <plug>skipoccurrence
+xmap <c-x> <plug>skipoccurrence
+nmap <c-p> <plug>removeoccurrence
+xmap <c-p> <plug>removeoccurrence
+nmap <s-c-n> <plug>allwholeoccurrences
+xmap <s-c-n> <plug>allwholeoccurrences
+nmap g<s-c-n> <plug>alloccurrences
+xmap g<s-c-n> <plug>alloccurrences
+" ================================================================================================
+" disable internal key
+nnoremap s <nop>
+vnoremap <s-j> <nop>
+" easymotion
+nmap ss <plug>(easymotion-s2)
+" = leader keymaps =====================================
+" ================================================================================================
+" leaderkey
+let mapleader=" "
+
+nnoremap <leader>v :nerdtreefind<cr>
+nmap <leader>em :action refactorings.quicklistpopupaction<cr>
+vmap <leader>em :action refactorings.quicklistpopupaction<cr>
+" extract method/function
+" vmap <leader>em <action>(extractmethod)
+" extact constant
+" vmap <leader>ec <action>(introduceconstant)
+" extract field
+" vmap <leader>ef <action>(introducefield)
+" extract variable
+" vmap <leader>ev <action>(introducevariable)
+" surround with
+vmap <leader>wi <action>(surroundwith)
+" debug
+nmap dp :action togglelinebreakpoint<cr>
+nmap dj :action stepover<cr>
+nmap dh :action stepout<cr>
+nmap dl :action forcestepinto<cr>
+nmap dk <action>(resume)
+nmap de :action evaluateexpression<cr>
+" ================================================================================================
+" 👻👻👻 which-key 👻👻👻
+" ================================================================================================
+set which-key
+set notimeout
+" b bookmark
+let g:whichkeydesc_bookmarks = "<leader>b bookmarks"
+nnoremap <leader>b :action bookmarks<cr>
+" c: close and save ⭐️;
+let g:whichkeydesc_closeorsave = "<leader>c saveorclose"
+let g:whichkeydesc_closebuffer = "<leader>cq closebuffer"
+nmap <leader>cq :q!<cr>
+let g:whichkeydesc_savebuffer = "<leader>cw savebuffer"
+nmap <leader>cw :w<cr>
+" d: debug
+let g:whichkeydesc_debug = "<leader>d debug"
+let g:whichkeydesc_debug_start = "<leader>db start"
+nmap <leader>db <action>(debug)
+let g:whichkeydesc_debug_stop = "<leader>ds stop"
+nmap <leader>ds <action>(stop)
+
+" f: find/format ⭐️
+let g:whichkeydesc_findorformat = "<leader>f findorformat"
+let g:whichkeydesc_findorformat_findfile = "<leader>ff findfile"
+nmap <leader>ff <action>(gotofile)
+
+let g:whichkeydesc_findorformat_recentchangedfiles = "<leader>fr rcf"
+nmap <leader>fr <action>(recentchangedfiles)
+
+let g:whichkeydesc_findorformat_findfilelocation = "<leader>fl findfilelocation"
+nmap <leader>fl <action>(selectinprojectview)
+
+let g:whichkeydesc_findorformat_findtext = "<leader>fw findtext"
+nmap <leader>fw <action>(findinpath)
+vmap <leader>fw <action>(findinpath)
+
+let g:whichkeydesc_findorformat_findclass = "<leader>fc findclass"
+nmap <leader>fc <action>(gotoclass)
+
+let g:whichkeydesc_findorformat_commands = "<leader>fa findaction"
+nmap <leader>fa <action>(gotoaction)
+
+let g:whichkeydesc_findorformat_openedproject = "<leader>fp openedproject"
+nmap <leader>fp <action>(openprojectwindows)
+
+let g:whichkeydesc_findorformat_format = "<leader>fm format"
+nmap <leader>fm <action>(reformatcode) \| <action>(optimizeimports)
+
+let g:whichkeydesc_findorformat_usage = "<leader>fu usage"
+nmap <leader>fu <action>(findusages)
+
+let g:whichkeydesc_findorformat_searcheverywhere = "<leader>fs searcheverywhere"
+nmap <leader>fs <action>(searcheverywhere)
+
+
+" g: git ⭐️
+let g:whichkeydesc_git = "<leader>g git"
+let g:whichkeydesc_git_rollbackhunk = "<leader>gr rollbackhunk"
+nmap <leader>gr :action vcs.rollbackchangedlines<cr>
+let g:whichkeydesc_git_annotate = "<leader>ga annotate"
+nmap <leader>ga <action>(annotate)
+let g:whichkeydesc_go_to_symbol = "<leader>gs gotorelated"
+nmap <leader>gs <action>(gotorelated)
+
+" i: insert ⭐️
+let g:whichkeydesc_insertafterbrackets = "<leader>i insertafterbrackets"
+nmap <leader>i f(a
+" j: add semicolon and goto next line⭐️
+let g:whichkeydesc_insertsemicolon = "<leader>j insertsemicolon"
+nmap <leader>j a;<esc>o
+
+" p
+let g:whichkeydesc_prefix = "<leader>p prefix"
+nmap  <leader>p <plug>(easymotion-prefix)
+
+" r: run/re ⭐️
+let g:whichkeydesc_runorre = "<leader>r runorre"
+let g:whichkeydesc_runorre_rerun = "<leader>rr rerun"
+nmap <leader>rr <action>(rerun)
+let g:whichkeydesc_runorre_reruntests = "<leader>rt reruntests"
+nmap <leader>rt <action>(reruntests)
+let g:whichkeydesc_runorre_rename = "<leader>rn rename"
+nmap <leader>rn <action>(renameelement)
+
+" s: show ⭐️
+let g:whichkeydesc_show = "<leader>s show"
+let g:whichkeydesc_show_filestructure = "<leader>sf showfilestructure"
+nmap <leader>sf <action>(filestructurepopup)
+let g:whichkeydesc_show_bookmarks = "<leader>sb showbookmarks"
+nmap <leader>sb <action>(showbookmarks)
+let g:whichkeydesc_show_javadoc = "<leader>sj showjavadoc"
+nmap <leader>sj <action>(quickjavadoc)
+let g:whichkeydesc_show_highlight = "<leader>sc nohighlight"
+nmap <leader>sc :nohlsearch<cr>
+let g:whichkeydesc_show_error = "<leader>se showerror"
+nmap <leader>se <action>(showerrordescription)
+
+" t: tool
+let g:whichkeydesc_terminal = "<leader>t tool"
+let g:whichkeydesc_terminal_open = "<leader>tt terminal"
+nmap <leader>tt <action>(activateterminaltoolwindow)
+
+" w: window ⭐️
+let g:whichkeydesc_windows = "<leader>w windows"
+let g:whichkeydesc_windows_maximize = "<leader>wo maximize"
+nmap <leader>wo <action>(unsplitall) \| <action>(hideallwindows)
+let g:whichkeydesc_windows_splitwindowvertically = "<leader>wl splitwindowvertically"
+nmap <leader>wl <action>(macro.splitvertically)
+let g:whichkeydesc_windows_closeactivewindow = "<leader>wc closeactivewindow"
+nmap <leader>wc <c-w>c
+
+" z: zip(fold) ⭐️
+let g:whichkeydesc_zip = "<leader>z zip"
+let g:whichkeydesc_zip_unzipall = "<leader>zo unzipall"
+nmap <leader>zo <action>(expandallregions)
+let g:whichkeydesc_zip_zipall = "<leader>zc zipall"
+nmap <leader>zc <action>(collapseallregions)
+
