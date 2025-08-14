@@ -1,0 +1,415 @@
+{
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "workbench.colorTheme": "Darcula",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.showTabs": "multiple",
+    "window.commandCenter": false,
+    "window.density.editorTabHeight": "compact",
+    "window.restoreWindows": "none",
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.useCtrlKeys": true,
+    "vim.leader": "<space>",
+    "editor.cursorSurroundingLines": 10,
+    "vim.smartRelativeLine": true,
+    "vim.highlightedyank.enable": true,
+    "vim.highlightedyank.duration": 150,
+    "vim.statusBarColorControl": true,
+    "vim.statusBarColors.normal": [
+        "#171819",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.insert": [
+        "#2C2E07",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.visual": [
+        "#35151D",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.visualline": [
+        "#35151D",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.visualblock": [
+        "#35151D",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.commandlineinprogress": [
+        "#2C2206",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.searchinprogressmode": [
+        "#171819",
+        "#ffffff"
+    ],
+    "vim.statusBarColors.surroundinputmode": [
+        "#171819",
+        "#ffffff"
+    ],
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#35151D",
+        "statusBar.noFolderBackground": "#35151D",
+        "statusBar.debuggingBackground": "#35151D",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.debuggingForeground": "#ffffff"
+    },
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "b",
+                "]"
+            ],
+            "commands": [
+                ":bn"
+            ]
+        },
+        {
+            "before": [
+                "b",
+                "["
+            ],
+            "commands": [
+                ":bp"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "]"
+            ],
+            "commands": [
+                "editor.action.marker.next"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "["
+            ],
+            "commands": [
+                "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "U"
+            ],
+            "after": [
+                "<C-r>"
+            ]
+        },
+        {
+            "before": [
+                "<Tab>"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "<S-k>"
+            ],
+            "after": [
+                "g",
+                "t"
+            ]
+        },
+        {
+            "before": [
+                "<S-j>"
+            ],
+            "after": [
+                "g",
+                "T"
+            ]
+        },
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        },
+        {
+            "before": [
+                "<leader>"
+            ],
+            "commands": [
+                "whichkey.show"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r",
+                "i"
+            ],
+            "commands": [
+                "editor.action.goToImplementation"
+            ]
+        },
+        {
+            "before": [
+                "g",
+                "r",
+                "D"
+            ],
+            "commands": [
+                "editor.action.revealDeclaration"
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<leader>"
+            ],
+            "commands": [
+                "whichkey.show"
+            ]
+        },
+        {
+            "before": [
+                "L"
+            ],
+            "after": [
+                "$"
+            ]
+        },
+        {
+            "before": [
+                "H"
+            ],
+            "after": [
+                "^"
+            ]
+        }
+    ],
+    "whichkey.useFullWidthCharacters": true,
+    "whichkey.bindingOverrides": [],
+    "whichkey.bindings": [
+        {
+            "key": "v", "name": "Show File in the [T]ree",
+            "type": "command",
+            "command": "workbench.files.action.showActiveFileInExplorer"
+        },
+        {
+            "key": "/",
+            "name": "[/] Fuzzy search in current editor",
+            "type": "command",
+            "command": "fuzzySearch.activeTextEditor"
+        },
+        {
+            "key": "f",
+            "name": "[F]format Document",
+            "type": "command",
+            "command": "editor.action.formatDocument"
+        },
+        {
+            "key": "T",
+            "name": "Open File [T]ree",
+            "type": "command",
+            "command": "workbench.view.explorer"
+        },
+        {
+            "key": "h",
+            "name": "[H]arpoon",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "a",
+                    "name": "[A]dd editor to harpoon",
+                    "type": "command",
+                    "command": "vscode-harpoon.addEditor"
+                },
+                {
+                    "key": "e",
+                    "name": "[E]dit harpoon editors",
+                    "type": "command",
+                    "command": "vscode-harpoon.editEditors"
+                }
+            ]
+        },
+        {
+            "key": "b",
+            "name": "[B]ookmark",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "b",
+                    "name": "[T]oggle bookmarks",
+                    "type": "command",
+                    "command": "bookmarks.toggle"
+                },
+                {
+                    "key": "l",
+                    "name": "[L]ist bookmarks",
+                    "type": "command",
+                    "command": "bookmarks.list"
+                },
+            ]
+        },
+        {
+            "key": "s",
+            "name": "[S]earch",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "h",
+                    "name": "[S]earch [H]arpoon Editors",
+                    "type": "command",
+                    "command": "vscode-harpoon.editorQuickPick"
+                },
+                {
+                    "key": "p",
+                    "name": "[S]earch Command [P]alette",
+                    "type": "command",
+                    "command": "workbench.action.showCommands"
+                },
+                {
+                    "key": "f",
+                    "name": "[S]earch [F]iles",
+                    "type": "command",
+                    "command": "workbench.action.quickOpen"
+                },
+                {
+                    "key": "k",
+                    "name": "[S]earch [K]eybindings",
+                    "type": "command",
+                    "command": "workbench.action.openGlobalKeybindings"
+                },
+                {
+                    "key": "e",
+                    "name": "[S]earch [E]xtensions",
+                    "type": "command",
+                    "command": "workbench.view.extensions"
+                },
+                {
+                    "key": "r",
+                    "name": "[S]earch Recent Files",
+                    "type": "command",
+                    "command": "workbench.action.openRecent"
+                }
+            ]
+        },
+        {
+            "key": "c",
+            "name": "[C]ode",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "a",
+                    "name": "[C]ode [A]ctions",
+                    "type": "command",
+                    "command": "editor.action.quickFix"
+                }
+            ]
+        },
+        {
+            "key": "r",
+            "name": "",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "c",
+                    "name": "[R]efactor [C]ode",
+                    "type": "command",
+                    "command": "editor.action.refactor"
+                },
+                {
+                    "key": "n",
+                    "name": "[R]e[N]ame Symbol",
+                    "type": "command",
+                    "command": "editor.action.rename"
+                },
+                {
+                    "key": "d",
+                    "name": "[R]un with [D]ebuging",
+                    "type": "command",
+                    "command": "workbench.action.debug.start"
+                },
+                {
+                    "key": "r",
+                    "name": "[R]un Without debugging",
+                    "type": "command",
+                    "command": "workbench.action.debug.run"
+                }
+            ]
+        },
+        {
+            "key": "D",
+            "name": "Jump to Type [D]efinition",
+            "type": "command",
+            "command": "editor.action.goToTypeDefinition"
+        },
+        {
+            "key": "d",
+            "name": "",
+            "type": "bindings",
+            "bindings": [
+                {
+                    "key": "s",
+                    "name": "[D]ocument [S]ymbols",
+                    "type": "command",
+                    "command": "workbench.action.gotoSymbol"
+                }
+            ]
+        }
+    ],
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<Esc>",
+                "`",
+                "^"
+            ]
+        }
+    ]
+}
