@@ -21,7 +21,9 @@
     "vim.statusBarColorControl": true,
     "vim.statusBarColors.normal": [
         "#171819",
-        "#ffffff" ], "vim.statusBarColors.insert": [
+        "#ffffff"
+    ],
+    "vim.statusBarColors.insert": [
         "#2C2E07",
         "#ffffff"
     ],

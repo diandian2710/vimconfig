@@ -123,24 +123,4 @@
         "command": "workbench.action.focusSideBar",
         "when": "editorTextFocus"
     },
-    {
-        "key": "e ]",
-        "command": "editor.action.marker.next",
-        "when": "editorFocus"
-    },
-    {
-        "key": "alt+f8",
-        "command": "-editor.action.marker.next",
-        "when": "editorFocus"
-    },
-    {
-        "key": "e [",
-        "command": "editor.action.marker.prev",
-        "when": "editorFocus"
-    },
-    {
-        "key": "shift+alt+f8",
-        "command": "-editor.action.marker.prev",
-        "when": "editorFocus"
-    },
 ]
