@@ -1,0 +1,11 @@
+{
+  "vimMode": true,
+  "strictLineBreaks": true,
+  "showLineNumber": true,
+  "readableLineLength": false,
+  "trashOption": "local",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "tyro",
+  "attachmentFolderPath": "tyro-attachment"
+}
