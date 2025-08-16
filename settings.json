@@ -61,6 +61,38 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         {
             "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                "workbench.action.navigateDown"
+            ]
+        },
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "commands": [
+                "workbench.action.navigateUp"
+            ]
+        },
+        {
+            "before": [
+                "<C-h>"
+            ],
+            "commands": [
+                "workbench.action.navigateLeft"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.navigateRight"
+            ]
+        },
+        {
+            "before": [
                 "b",
                 "]"
             ],
@@ -93,6 +125,14 @@
             ],
             "commands": [
                 "editor.action.marker.prev"
+            ]
+        },
+        {
+            "before": [
+                "<C-x>"
+            ],
+            "commands": [
+                "git.revertSelectedRanges"
             ]
         },
         {
@@ -232,7 +272,8 @@
     "whichkey.bindingOverrides": [],
     "whichkey.bindings": [
         {
-            "key": "v", "name": "Show File in the [T]ree",
+            "key": "v",
+            "name": "Show File in the [T]ree",
             "type": "command",
             "command": "workbench.files.action.showActiveFileInExplorer"
         },
